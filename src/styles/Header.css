@@ -1,34 +1,30 @@
-.header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 30px 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+  background:linear-gradient(90deg,#667eea,#764ba2);
+  color:white;
 }
 
-.header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
+.logo{
+  font-size:26px;
+  font-weight:bold;
 }
 
-.header-title {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  font-weight: 700;
+.cart-icon{
+  position:relative;
+  font-size:22px;
+  cursor:pointer;
 }
 
-.header-subtitle {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  font-weight: 300;
-}
-
-@media (max-width: 768px) {
-  .header-title {
-    font-size: 2rem;
-  }
-  
-  .header-subtitle {
-    font-size: 1rem;
-  }
+.cart-count{
+  position:absolute;
+  top:-8px;
+  right:-10px;
+  background:red;
+  color:white;
+  font-size:12px;
+  padding:4px 6px;
+  border-radius:50%;
 }
