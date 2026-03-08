@@ -1,16 +1,28 @@
-import "../styles/Header.css";
+import { Link } from "react-router-dom";
+import { useCart } from "../hooks/useCart";
+import "../styles/Header.css"
 
-function Header({ cartItemCount, onCartClick }) {
+function Header({ searchTerm, onSearchChange }) {
+
+  const { getTotalItems, toggleCart } = useCart();
 
   return (
-    <header className="header">
+    <header>
 
-      <h1 className="logo">QuickCart</h1>
+      <Link to="/">
+        <h1>🛒 QuickCart</h1>
+      </Link>
 
-      <div className="cart-icon" onClick={onCartClick}>
-        🛒
-        <span className="cart-count">{cartItemCount}</span>
-      </div>
+      <input
+        type="text"
+        placeholder="Search products..."
+        value={searchTerm}
+        onChange={(e) => onSearchChange(e.target.value)}
+      />
+
+      <button onClick={toggleCart}>
+        Cart ({getTotalItems()})
+      </button>
 
     </header>
   );

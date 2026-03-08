@@ -1,4 +1,4 @@
-import "../styles/ProductCard.css";
+import "../styles/ProductCard.css"
 
 function ProductCard({ product, onAddToCart }) {
 
@@ -9,14 +9,11 @@ function ProductCard({ product, onAddToCart }) {
 
       <h3>{product.name}</h3>
 
-      <p className="description">{product.description}</p>
+      <p>{product.description}</p>
 
-      <p className="price">${product.price}</p>
+      <p>${product.price}</p>
 
-      <button
-        className="add-btn"
-        onClick={() => onAddToCart(product)}
-      >
+      <button onClick={() => onAddToCart(product)}>
         Add to Cart
       </button>
 
