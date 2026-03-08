@@ -60,3 +60,15 @@
   font-weight:bold;
   margin-top:20px;
 }
+
+.close-btn{
+  position:absolute;
+  right:15px;
+  top:15px;
+  background:red;
+  color:white;
+  border:none;
+  padding:4px 8px;
+  border-radius:4px;
+  cursor:pointer;
+}

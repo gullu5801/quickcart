@@ -17,7 +17,7 @@ function CartSidebar() {
   return (
     <div className="cart-sidebar">
 
-      <button onClick={toggleCart}>Close</button>
+      <button className="close-btn" onClick={toggleCart}>Close</button>
 
       <h2>Your Cart</h2>
 
@@ -27,34 +27,53 @@ function CartSidebar() {
         cart.map(item => (
           <div key={item.id} className="cart-item">
 
-            <h4>{item.name}</h4>
-            <p>${item.price}</p>
+            {/* Product Image */}
+            <img
+              src={item.image}
+              alt={item.name}
+              className="cart-image"
+            />
 
-            <button onClick={() =>
-              updateQuantity(item.id, item.quantity - 1)
-            }>
-              -
-            </button>
+            <div className="cart-details">
 
-            {item.quantity}
+              <h4>{item.name}</h4>
+              <p className="cart-price">${item.price}</p>
 
-            <button onClick={() =>
-              updateQuantity(item.id, item.quantity + 1)
-            }>
-              +
-            </button>
+              <div className="qty-controls">
+                <button
+                  onClick={() =>
+                    updateQuantity(item.id, item.quantity - 1)
+                  }
+                >
+                  -
+                </button>
 
-            <button onClick={() =>
-              removeFromCart(item.id)
-            }>
-              Remove
-            </button>
+                <span>{item.quantity}</span>
 
+                <button
+                  onClick={() =>
+                    updateQuantity(item.id, item.quantity + 1)
+                  }
+                >
+                  +
+                </button>
+              </div>
+
+              <button
+                className="remove-btn"
+                onClick={() => removeFromCart(item.id)}
+              >
+                Remove
+              </button>
+
+            </div>
           </div>
         ))
       )}
 
-      <h3>Total: ${getTotalPrice()}</h3>
+      <h3 className="cart-total">
+        Total: ${getTotalPrice()}
+      </h3>
 
     </div>
   );
