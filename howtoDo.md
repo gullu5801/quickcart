@@ -48,3 +48,5 @@ Sidebar only	    Full cart page
 at last before submitting it should look like 
 
 ![alt text](./src/assets/final.png)
+
+enjoy!!
